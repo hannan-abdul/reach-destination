@@ -1,0 +1,33 @@
+[{
+    "id": 1,
+    "name": "Bike",
+    "age": 34,
+    "image": "https://i.ibb.co/K0FgrGw/Frame.png",
+    "country": "Argentina",
+    "birth": "24-06-1987",
+    "salary": 220000
+  }, {
+    "id": 2,
+    "name": "Bus",
+    "age": 29,
+    "image": "https://i.ibb.co/87pd9Pf/Frame-1.png",
+    "country": "Spain",
+    "birth": "07-02-1992",
+    "salary": 200000
+  }, {
+    "id": 3,
+    "name": "Car",
+    "age": 32,
+    "image": "https://i.ibb.co/qk23ZVy/Frame-2.png",
+    "country": "Spain",
+    "birth": "21-03-1989",
+    "salary": 200000
+  }, {
+    "id": 4,
+    "name": "Train",
+    "age": 28,
+    "image": "https://i.ibb.co/tZ60Vh3/Group.png",
+    "country": "Cameroon",
+    "birth": "14-11-1993",
+    "salary": 150000
+  }]
