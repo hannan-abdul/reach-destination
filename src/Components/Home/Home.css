@@ -3,20 +3,29 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     background-color: #a0f9a354;
     background-blend-mode: overlay;
     bottom: 10px;
+    background-attachment: fixed;
 }
 .vehicles{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+    width: 100%;
 }
 .card{
     padding: 30px;
     margin: 5px;
     border-radius: 10px!important;
+    font-family: 'Roboto', sans-serif;
 }
+@media (max-width: 991px){
+    .vehicles{
+        transform: translate(-50%, -1%);
+        top: 1%;
+    }
+  }

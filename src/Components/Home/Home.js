@@ -15,7 +15,7 @@ const Home = () => {
             <div className="row justify-content-center vehicles">
                 {
                     vehicles.map(vehicle =>
-                        <div className="col-lg-2 card">
+                        <div className="col-lg-2 col-md-4 col-10 card">
                             <Vehicle vehicle={vehicle}></Vehicle>
                         </div>)
                 }

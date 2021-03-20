@@ -9,11 +9,11 @@ const NavBar = () => {
     return (
         <div className="container-fluid">
             <div className="row justify-content-between color-fix">
-                <div>
+                <div className='col-lg-6 col-12 logo-fix'>
                     <h3 className="nav-title">Reach Destination</h3>
                 </div>
-                <div>
-                    <nav className="nav">
+                <div className='col-lg-6 col-12'>
+                    <nav>
                         <ul>
                             <li>
                                 <Link to="/home">Home</Link>

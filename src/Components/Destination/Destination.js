@@ -11,7 +11,7 @@ const Destination = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-md-4'>
+                <div className='col-lg-4 col-12'>
                     <form className='search-form' onSubmit={handleSubmit(onSubmit)}>
                         <input placeholder='Pick From' name="example" ref={register({ required: true })} />
                         <input placeholder='Pick To' name="exampleRequired" ref={register({ required: true })} />
@@ -19,7 +19,7 @@ const Destination = () => {
                         <input type="Submit"/>
                     </form>
                 </div>
-                <div className='col-md-8'>
+                <div className='col-lg-8 col-12'>
                     <img className='map-img' src={maps} alt="" />
                 </div>
             </div>

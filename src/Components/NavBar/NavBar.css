@@ -2,17 +2,31 @@
     padding: 30px 100px;
     background-color: #A1EBF7;
 }
-.nav li{
+nav li{
     display: inline;
     margin-left: 20px;
 }
-.nav li a{
+nav li a{
     color: #333;
     text-decoration: none;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
 .nav-title{
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'Roboto', sans-serif;
 }
+
+@media (max-width: 991px){
+    .logo-fix{
+        text-align: center;
+    }
+    nav{
+        text-align: center;
+    }
+  }
+  @media (max-width: 575px){
+    .color-fix{
+        padding: 30px 30px;
+    }
+  }

@@ -4,3 +4,8 @@
 .vehicle-container img {
     width: 70%;
 }
+.vehicle-container h3{
+    text-decoration: none !important;
+    color: #333;
+    padding-top: 10px;
+}
