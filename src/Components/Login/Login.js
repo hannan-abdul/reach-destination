@@ -8,11 +8,25 @@ import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
+
 if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
 }
 
 function Login() {
+    const [isError, setIsError] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const checkValidation = (e) => {
+        setConfirmPassword(e.target.value);
+        if (password != e.target.value) {
+            setIsError("Confirm Password Should match with Password")
+        } else {
+            setIsError("")
+        }
+    }
+
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -154,14 +168,6 @@ function Login() {
 
     return (
         <div style={{ textAlign: 'center' }}>
-
-            {/* {
-                user.isSignedIn && <div>
-                    <p>Welcome, {user.name}</p>
-                    <p>Email: {user.email}</p>
-                </div>
-            } */}
-
             <div className='form-style'>
                 <h3>{newUser ? 'Create an account' : 'Login'}</h3>
 
@@ -173,16 +179,20 @@ function Login() {
                         <input class="form-label" type="email" name="email" onBlur={handleBlur} placeholder="Your Email" required />
                     </div>
                     <div className='mb-3'>
-                        <input class="form-label" type="password" id="password" name="password" onBlur={handleBlur} placeholder="Your Password" required />
+                        <input class="form-label" type="password" id="password" name="password" onBlur={handleBlur} placeholder="Your Password" onChange={(e) => setPassword(e.target.value)} required />
                     </div>
                     <div className='mb-3'>
-                        {newUser && <input class="form-label" type="password" id="confirm_password" name="confirm_password" onBlur={handleBlur} placeholder="Confirm Password" required />}
+                        {newUser && <input class="form-label" type="password" id="confirmPassword" name="confirmPassword" onBlur={handleBlur} placeholder="Confirm Password" onChange={(e) => checkValidation(e)} required />}
                     </div>
                     <button type="submit" class="btn btn-custom">{newUser ? 'Sign up' : 'Sign in'}</button>
                 </form>
                 <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="newUser" />
                 <label htmlFor="newUser">Don't have an account?</label>
             </div>
+            <div className="error-handle">
+                {isError}
+            </div>
+
             <div className="button-fix">
                 {
                     user.isSignedIn ? <button onClick={handleSignOut}>Sign Out</button> :

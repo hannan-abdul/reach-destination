@@ -1,6 +1,6 @@
 .color-fix{
-    padding: 30px 100px;
-    background-color: #A1EBF7;
+    padding: 30px;
+    background-color:#AFEEF8;
 }
 nav li{
     display: inline;
@@ -27,6 +27,9 @@ nav li a{
   }
   @media (max-width: 575px){
     .color-fix{
-        padding: 30px 30px;
+        padding: 5px;
+    }
+    nav li{
+        margin-left: 10px;
     }
   }
