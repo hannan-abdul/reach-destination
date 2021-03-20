@@ -4,6 +4,9 @@ import firebaseConfig from './firebase.config';
 import { useContext, useState } from 'react';
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
+import './Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
@@ -150,42 +153,50 @@ function Login() {
     }
 
     return (
-        <div >
+        <div style={{ textAlign: 'center' }}>
 
-            {
+            {/* {
                 user.isSignedIn && <div>
                     <p>Welcome, {user.name}</p>
                     <p>Email: {user.email}</p>
                 </div>
-            }
+            } */}
 
-            <h3>{newUser ? 'Create an account' : 'Login'}</h3>
+            <div className='form-style'>
+                <h3>{newUser ? 'Create an account' : 'Login'}</h3>
 
-            <form onSubmit={handleSubmit}>
-                {newUser && <input name="name" type="text" onBlur={handleBlur} placeholder="Your name" />}
-                <br />
-                <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email" required />
-                <br />
-                <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required />
-                <br />
-                <input type="submit" value={newUser ? 'sign up' : 'sign in'} />
-            </form>
-            {/* <p>Don't have an Account? <button onChange={() => setNewUser(!newUser)}>Create an Account</button></p> */}
-            
-            <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-            <label htmlFor="newUser">Don't have an account?</label>
-            <br />
-            {
-                user.isSignedIn ? <button onClick={handleSignOut}>Sign Out</button> :
-                    <button onClick={handleGoogleSignIn}>Sign In using Google</button>
-            }
-            <br />
-            {
-                <button onClick={handleFbSignIn}>Sign in using Facebook</button>
-            }
+                <form onSubmit={handleSubmit}>
+                    <div className='mb-3'>
+                        {newUser && <input class="form-label" name="name" type="text" onBlur={handleBlur} placeholder="Your name" />}
+                    </div>
+                    <div className='mb-3'>
+                        <input class="form-label" type="email" name="email" onBlur={handleBlur} placeholder="Your Email" required />
+                    </div>
+                    <div className='mb-3'>
+                        <input class="form-label" type="password" id="password" name="password" onBlur={handleBlur} placeholder="Your Password" required />
+                    </div>
+                    <div className='mb-3'>
+                        {newUser && <input class="form-label" type="password" id="confirm_password" name="confirm_password" onBlur={handleBlur} placeholder="Confirm Password" required />}
+                    </div>
+                    <button type="submit" class="btn btn-custom">{newUser ? 'Sign up' : 'Sign in'}</button>
+                </form>
+                <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="newUser" />
+                <label htmlFor="newUser">Don't have an account?</label>
+            </div>
+            <div className="button-fix">
+                {
+                    user.isSignedIn ? <button onClick={handleSignOut}>Sign Out</button> :
+                        <button className="inner-button-fix" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /> Sign In using Google</button>
+                }
+            </div>
+            <div className="button-fix">
+                {
+                    <button className="inner-button-fix" onClick={handleFbSignIn}><FontAwesomeIcon icon={faFacebook} /> Sign in using Facebook</button>
+                }
+            </div>
 
             <p style={{ color: 'red' }}>{user.error}</p>
-            { user.success && <p style={{ color: 'green' }}>User {newUser ? 'Created' : 'Logged In'} Successfully</p>}
+            {user.success && <p style={{ color: 'green' }}>User {newUser ? 'Created' : 'Logged In'} Successfully</p>}
         </div>
     );
 }

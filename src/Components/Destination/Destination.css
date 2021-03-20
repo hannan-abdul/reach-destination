@@ -1,0 +1,17 @@
+.search-form{
+    margin: 30px 50px;
+}
+.search-form input{
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 200px;
+}
+.error{
+    color: red;
+}
+.map-img{
+    width: 80%;
+}

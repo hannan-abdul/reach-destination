@@ -17,12 +17,10 @@ import NotFound from './Components/NotFound/NotFound';
 
 export const UserContext = createContext();
 
-
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.email}</p>
       <Router>
         <NavBar />
         <Switch>

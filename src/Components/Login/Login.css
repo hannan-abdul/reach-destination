@@ -1,0 +1,23 @@
+.form-style{
+    background-color: #EFEFEF;
+    margin: 3% 40%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px slategrey;
+}
+.form-style form input{
+    margin: 5px;
+}
+.btn-custom{
+    background-color: coral !important;
+    color: #fff !important;
+}
+.button-fix{
+    margin: 10px;
+}
+.inner-button-fix{
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px slategrey;
+    width: 20%;
+}

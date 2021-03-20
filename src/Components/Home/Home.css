@@ -4,7 +4,19 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    /* position: relative; */
+    position: relative;
     background-color: #a0f9a354;
     background-blend-mode: overlay;
+    bottom: 10px;
+}
+.vehicles{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.card{
+    padding: 30px;
+    margin: 5px;
+    border-radius: 10px!important;
 }

@@ -6,21 +6,21 @@ import './Home.css';
 const Home = () => {
     const [vehicles, setVehicles] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         setVehicles(VehicleData);
         console.log(VehicleData)
-    },[])
+    }, [])
     return (
-        <div className="container background">
-                <div className="row justify-content-center">
-                    {
-                        vehicles.map(vehicle=> 
-                        <div className="col-lg-3 card"> 
+        <div className="container-fluid background">
+            <div className="row justify-content-center vehicles">
+                {
+                    vehicles.map(vehicle =>
+                        <div className="col-lg-2 card">
                             <Vehicle vehicle={vehicle}></Vehicle>
-                            </div>)
-                    }
-                </div>
+                        </div>)
+                }
             </div>
+        </div>
     );
 };
 
