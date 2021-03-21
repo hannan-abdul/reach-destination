@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import maps from '../../images/Map.png';
 import { useForm } from "react-hook-form";
 import './Destination.css';
+import Map from '../Map/Map';
 
 const Destination = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -20,7 +21,7 @@ const Destination = () => {
                     </form>
                 </div>
                 <div className='col-lg-8 col-12'>
-                    <img className='map-img' src={maps} alt="" />
+                    <Map></Map>
                 </div>
             </div>
         </div>
