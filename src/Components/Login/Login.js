@@ -43,6 +43,8 @@ function Login() {
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     const fbProvider = new firebase.auth.FacebookAuthProvider();
+    
+    //Google SignIn
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(googleProvider)
             .then(res => {
@@ -61,6 +63,7 @@ function Login() {
             })
     }
 
+    //Facebook SignIn
     const handleFbSignIn = () => {
         firebase.auth().signInWithPopup(fbProvider)
             .then((result) => {
@@ -80,7 +83,8 @@ function Login() {
                 var credential = error.credential;
             });
     }
-
+    
+    //SignOut
     const handleSignOut = () => {
         firebase.auth().signOut()
             .then(res => {
